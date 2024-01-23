@@ -10,9 +10,9 @@ function lerArquivoJson(caminhoArquivo) {
   }
 }
 
-// Teste para a função lerArquivoJson
-//const dadosTesteLeitura = lerArquivoJson('broken_database_1.json');
-//console.log('Dados lidos:', dadosTesteLeitura);
+/*Teste para a função lerArquivoJson
+const dadosTesteLeitura = lerArquivoJson('broken_database_1.json');
+console.log('Dados lidos:', dadosTesteLeitura);*/ 
 
 function corrigirNomes(dados) {
   return dados.map(item => {
@@ -23,8 +23,23 @@ function corrigirNomes(dados) {
   });
 }
 
-// Teste para a função corrigirNomes
+/*Teste para a função corrigirNomes
 const dadosTesteNomes = [{ nome: 'Møbi' }, { nome: 'Picæntø' }];
 console.log('Antes da correção:', dadosTesteNomes);
 const dadosNomesCorrigidos = corrigirNomes(dadosTesteNomes);
-console.log('Após a correção:', dadosNomesCorrigidos);
+console.log('Após a correção:', dadosNomesCorrigidos);*/ 
+
+function corrigirVendas(dados) {
+  return dados.map(item => {
+    if (typeof item.vendas === 'string') {
+      item.vendas = parseInt(item.vendas, 10);
+    }
+    return item;
+  });
+}
+
+// Teste para a função corrigirVendas
+const dadosTesteVendas = [{ vendas: '10' }, { vendas: 5 }];
+console.log('Antes da correção:', dadosTesteVendas);
+const dadosVendasCorrigidos = corrigirVendas(dadosTesteVendas);
+console.log('Após a correção:', dadosVendasCorrigidos);
