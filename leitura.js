@@ -9,3 +9,7 @@ function lerArquivoJson(caminhoArquivo) {
     return null;
   }
 }
+
+// Teste para a função lerArquivoJson
+const dadosTesteLeitura = lerArquivoJson('broken_database_1.json');
+console.log('Dados lidos:', dadosTesteLeitura);
