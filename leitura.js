@@ -58,12 +58,12 @@ function exportarDadosCorrigidos(dados, caminhoArquivo) {
   }
 }
 
-// Primeiro, leia e corrija os dados de broken_database_1.json
+//broken_database_1.json
 const dados1 = lerArquivoJson('broken_database_1.json');
 const dados1Corrigidos = corrigirVendas(corrigirNomesEMarcas(dados1));
 exportarDadosCorrigidos(dados1Corrigidos, 'database_corrigido_1.json');
 
-// Em seguida, faça o mesmo para broken_database_2.json
+//broken_database_2.json
 const dados2 = lerArquivoJson('broken_database_2.json');
 const dados2Corrigidos = corrigirVendas(corrigirNomesEMarcas(dados2));
 exportarDadosCorrigidos(dados2Corrigidos, 'database_corrigido_2.json');
